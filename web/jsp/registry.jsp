@@ -1,7 +1,12 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
-<%@ include file="top.jsp" %>
-
-<form class="form-horizontal" action="registry" method="post" onsubmit="return">
+<html>
+<head>
+    <title>Login</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<form class="form-horizontal" action="controller" method="post" onsubmit="return" style="margin-top: 15px">
     <fieldset>
 
         <!-- Text input-->
@@ -73,5 +78,5 @@
 
     </fieldset>
 </form>
-
-<%@ include file="bottom.jsp" %>
+</body>
+</html>

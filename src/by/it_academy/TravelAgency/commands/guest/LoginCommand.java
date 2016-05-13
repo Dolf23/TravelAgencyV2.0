@@ -28,10 +28,10 @@ public class LoginCommand implements Command {
                 String role = UserDAO.INSTANCE.checkRole(login);
                 session.setAttribute(Parameters.USER_ROLE, role);
                 session.setAttribute(Parameters.USER, user);
-                if (role.equals("administrator"))
+                if (role.equals(Parameters.ADMIN))
                     page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.ADMIN_PAGE_PATH);
                 else
-                    page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.CLIENT_PAGE_PATH);
+                    page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.USER_PAGE_PATH);
 
             }
             else {

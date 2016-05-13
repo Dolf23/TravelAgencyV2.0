@@ -32,7 +32,7 @@ public class logger {
             printer.println(new Date(System.currentTimeMillis()) + " : " + logText);
             printer.close();
         } catch (IOException e) {
-            writeLog("Ошибка записи LogFile.");
+
         }
     }
 }

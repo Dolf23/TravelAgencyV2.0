@@ -108,6 +108,7 @@ public enum UserDAO implements DAO<User> {
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement statement = connection.prepareStatement(SQLRequests.GET_USER_BY_LOGIN);
         statement.setString(1, login);
+
         ResultSet resultSet = statement.executeQuery();
 
         User user = null;
