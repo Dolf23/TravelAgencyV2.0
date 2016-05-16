@@ -35,10 +35,10 @@ public class SQLRequests {
     public static final String GET_TRANSPORT_BY_ID = String.format("SELECT * FROM transports WHERE %s=?;", TRANSPORTS_ID);
 
     public static final String GET_ALL_USERS = "SELECT * FROM users;";
-    public static final String ADD_USER = String.format("INSERT INTO users(%s, %s, %s, %s, %s, %s) VALUES (?, ?, ?, ?, ?, ?, ?);", USERS_NAME, USERS_SURNAME, USERS_EMAIL, USERS_LOGIN, USERS_PASSWORD, USERS_FK_ROLE);
+    public static final String ADD_USER = String.format("INSERT INTO users(%s, %s, %s, %s, %s, %s) VALUES (?, ?, ?, ?, ?, ?);", USERS_NAME, USERS_SURNAME, USERS_EMAIL, USERS_LOGIN, USERS_PASSWORD, USERS_FK_ROLE);
     public static final String GET_USER_BY_ID = String.format("SELECT * FROM users WHERE %s=?;", USERS_ID);
     public static final String GET_USER_BY_LOGIN = String.format("SELECT * FROM users WHERE %s=?;", USERS_LOGIN);
     public static final String CHECK_AUTHORIZATION = String.format("SELECT %s, %s FROM users WHERE %s=? AND %s=?;", USERS_LOGIN, USERS_PASSWORD, USERS_LOGIN, USERS_PASSWORD);
     public static final String CHECK_ROLE = String.format("SELECT %s FROM users WHERE %s=?;", USERS_FK_ROLE, USERS_LOGIN);
-    public static final String CHECK_LOGIN = String.format("SELECT %s FROM users WHERE %s=?;", USERS_LOGIN, USERS_ID);
+    public static final String CHECK_LOGIN = String.format("SELECT %s FROM users WHERE %s=?;", USERS_LOGIN, USERS_LOGIN);
 }

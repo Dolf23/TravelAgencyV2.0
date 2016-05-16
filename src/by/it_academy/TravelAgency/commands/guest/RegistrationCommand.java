@@ -33,7 +33,7 @@ public class RegistrationCommand extends AbstractCommand {
         password = request.getParameter(PASSWORD);
         int fkRole;
         try {
-            if (null == request.getParameter(ROLE))
+            if (null != request.getParameter(ROLE))
                 fkRole = RoleDAO.INSTANCE.getIdByRole(ADMIN);
             else
                 fkRole = RoleDAO.INSTANCE.getIdByRole(USER);
@@ -41,11 +41,11 @@ public class RegistrationCommand extends AbstractCommand {
             if (areFieldsFull()){
                 if (UserDAO.INSTANCE.isNewUser(login)){
                     registration(fkRole);
-                    page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.REGISTRATION_PAGE_PATH);
-                    request.setAttribute(Parameters.OPERATION_MESSAGE, MessageManager.INSTANCE.getProperty(MessageConstants.SUCCESS_OPERATION));
+                    page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.INDEX_PAGE_PATH);
+                    request.setAttribute(Parameters.OPERATION_MESSAGE, MessageManager.INSTANCE.getProperty(MessageConstants.SUCCESS_REGISTRATION));
                 }
                 else{
-                    page = ConfigurationManager.INSTANCE.getProperty(Parameters.ERROR_USER_EXISTS);
+                    page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.REGISTRATION_PAGE_PATH);
                     request.setAttribute(Parameters.ERROR_USER_EXISTS, MessageManager.INSTANCE.getProperty(MessageConstants.USER_EXSISTS));
                 }
             }

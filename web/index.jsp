@@ -6,11 +6,13 @@
   <script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form class="form-horizontal"  method="POST" action="controller" style="margin-top: 10%">
-  <fieldset>
 
+<form class="form-horizontal"  method="POST" action="controller" style="margin-top: 10%">
+  <input type="hidden"  name="command" value="login">
+  <fieldset>
     <div  align="center">
       <h3>${errorLoginOrPassword}<br/></h3>
+      <h3>${operationMessage} <br></h3>
     </div>
     <!-- Text input-->
     <div class="form-group">
@@ -35,7 +37,7 @@
       <label class="col-md-4 control-label" for="buttonLogin"></label>
       <div class="col-md-8">
         <button id="buttonLogin" name="buttonLogin" class="btn btn-success">Login</button>
-        <a href="controller?command=go_to_registration">Registry</a>
+        <a href="controller?command=go_to_registration" style="margin-left: 25px;">Registry</a>
       </div>
     </div>
 

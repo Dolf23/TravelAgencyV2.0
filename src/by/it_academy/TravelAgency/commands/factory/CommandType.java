@@ -8,7 +8,7 @@ public enum CommandType {
     LOGIN, LOGOUT, REGISTRATION, BACK, GO_TO_REGISTRATION,
 
     //user command
-    RESERV,
+    RESERVE,
 
     //admin command
     GREATETOUR, SETDISCOUNT;

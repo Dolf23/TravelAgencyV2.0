@@ -6,7 +6,9 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form class="form-horizontal" action="controller" method="post" onsubmit="return" style="margin-top: 15px">
+
+<form class="form-horizontal" method="POST" action="/controller" style="margin-top: 15px">
+    <input type="hidden"  name="command" value="registration">
     <fieldset>
 
         <!-- Text input-->
@@ -60,7 +62,7 @@
             <div class="col-md-4">
                 <div class="checkbox">
                     <label for="role">
-                        <input type="checkbox" name="role" id="role" value="1">
+                        <input type="checkbox" name="role" id="role" value="admin">
                         Travel agent
                     </label>
                 </div>
@@ -72,8 +74,14 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="buttonRegistry"></label>
             <div class="col-md-4">
-                <button id="buttonRegistry" name="buttonRegistry" class="btn btn-success" onclick="">Registry</button>
+                <button id="buttonRegistry" name="buttonRegistry" class="btn btn-success">Registry</button>
+                <a href="controller?command=back" style="margin-left: 25px;">Back</a>
             </div>
+        </div>
+
+        <div  align="center">
+            <h3>${operationMessage}<br></h3>
+            <h3>${errorUserExists}<br/></h3>
         </div>
 
     </fieldset>
