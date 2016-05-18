@@ -1,5 +1,5 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
-<%@ include file="../top.jsp" %>
+<%@ include file="top.jsp" %>
 
 <form class="form-horizontal" action="createtour" method="post">
     <fieldset>
@@ -69,4 +69,4 @@
     </fieldset>
 </form>
 
-<%@ include file="../bottom.jsp" %>
+<%@ include file="bottom.jsp" %>

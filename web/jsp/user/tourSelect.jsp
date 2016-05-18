@@ -1,17 +1,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" pageEncoding="UTF-8" %>
-<%@ include file="../top.jsp" %>
+<%@ include file="top.jsp" %>
 
-<form class="form-horizontal" action="select" method="post">
+<form class="form-horizontal" action="/controller" method="post">
+    <input type="hidden"  name="command" value="select_tour">
     <fieldset>
 
         <!-- Select Basic -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="selectbasicTypeTour">Type tour</label>
+            <label class="col-md-4 control-label" for="tourType">Type tour</label>
             <div class="col-md-4">
-                <select id="selectbasicTypeTour" name="selectbasicTypeTour" class="form-control">
-                    <c:forEach  var="TypeTour"  items="${typeTourList}">
-                        <option value="${TypeTour.id}">${TypeTour.typeTour}</option>
+                <select id="tourType" name="tourType" class="form-control">
+                    <c:forEach  var="TourType"  items="${tourTypeList}">
+                        <option value="${TourType.id}">${TourType.tourType}</option>
                     </c:forEach>
                 </select>
             </div>
@@ -19,10 +20,10 @@
 
         <!-- Select Basic -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="selectbasicCountry">Country</label>
+            <label class="col-md-4 control-label" for="country">Country</label>
             <div class="col-md-4">
-                <select id="selectbasicCountry" name="selectbasicCountry" class="form-control">
-                    <c:forEach  var="Country" items="${countryList}">
+                <select id="country" name="country" class="form-control">
+                    <c:forEach  var="Countries" items="${countryList}">
                         <option value="${Countries.id}">${Countries.country}</option>
                     </c:forEach>
                 </select>
@@ -31,9 +32,9 @@
 
         <!-- Select Basic -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="selectbasicTransport">Transport</label>
+            <label class="col-md-4 control-label" for="transport">Transport</label>
             <div class="col-md-4">
-                <select id="selectbasicTransport" name="selectbasicTransport" class="form-control">
+                <select id="transport" name="transport" class="form-control">
                     <c:forEach var="Transport" items="${transportList}">
                         <option value="${Transport.id}">${Transport.transport}</option>
                     </c:forEach>
@@ -43,11 +44,11 @@
 
         <!-- Select Basic -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="selectbasicHotel">Hotel</label>
+            <label class="col-md-4 control-label" for="hotelType">Hotel</label>
             <div class="col-md-4">
-                <select id="selectbasicHotel" name="selectbasicHotel" class="form-control">
+                <select id="hotelType" name="hotelType" class="form-control">
                     <c:forEach var="Hotel" items="${hotelList}">
-                        <option value="${Hotel.id}">${Hotel.typeHotel}</option>
+                        <option value="${Hotel.id}">${Hotel.hotelType}</option>
                     </c:forEach>
                 </select>
             </div>
@@ -55,9 +56,9 @@
 
         <!-- Select Basic -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="selectbasicFoodComplex">Food complex</label>
+            <label class="col-md-4 control-label" for="foodComplex">Food complex</label>
             <div class="col-md-4">
-                <select id="selectbasicFoodComplex" name="selectbasicFoodComplex" class="form-control">
+                <select id="foodComplex" name="foodComplex" class="form-control">
                     <c:forEach var="FoodComplex" items="${foodComplexList}">
                         <option value="${FoodComplex.id}">${FoodComplex.foodComplex}</option>
                     </c:forEach>
@@ -73,7 +74,11 @@
             </div>
         </div>
 
+        <div  align="center">
+            <h3>${errorListIsEmpty}<br></h3>
+        </div>
+
     </fieldset>
 </form>
 
-<%@ include file="../bottom.jsp" %>
+<%@ include file="bottom.jsp" %>

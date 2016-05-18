@@ -8,6 +8,19 @@ public class Parameters {
     public static final String PASSWORD = "password";
     public static final String ROLE = "role";
 
+    public static final String TOUR_TYPE_LIST = "tourTypeList";
+    public static final String COUNTRY_LIST = "countryList";
+    public static final String TRANSPORT_LIST = "transportList";
+    public static final String HOTEL_TYPE_LIST = "hotelList";
+    public static final String FOOD_COMPLEX_LIST = "foodComplexList";
+    public static final String TOURS_LIST = "tourList";
+
+    public static final String TOUR_TYPE = "tourType";
+    public static final String COUNTRY = "country";
+    public static final String TRANSPORT = "transport";
+    public static final String HOTEL_TYPE = "hotelType";
+    public static final String FOOD_COMPLEX = "foodComplex";
+
     public static final String ADMIN = "administrator";
     public static final String COMMAND = "command";
     public static final String USER_ROLE = "userRole";
@@ -16,4 +29,5 @@ public class Parameters {
     public static final String ERROR_LOGIN_OR_PASSWORD = "errorLoginOrPassword";
     public static final String ERROR_USER_EXISTS = "errorUserExists";
     public static final String OPERATION_MESSAGE = "operationMessage";
+    public static final String ERROR_TOUR_LIST_IS_EMPTY = "errorListIsEmpty";
 }

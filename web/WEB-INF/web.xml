@@ -27,11 +27,14 @@
         <servlet-name>Controller</servlet-name>
     </filter-mapping>
 
-    <resource-ref>
-        <res-ref-name>jdbc/travel_agency</res-ref-name>
-        <res-type>javax.sql.DataSource</res-type>
-        <res-auth>Container</res-auth>
-    </resource-ref>
+    <filter>
+        <filter-name>EntityLists</filter-name>
+        <filter-class>by.it_academy.TravelAgency.filters.ListsEntityFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EntityLists</filter-name>
+        <servlet-name>Controller</servlet-name>
+    </filter-mapping>
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>

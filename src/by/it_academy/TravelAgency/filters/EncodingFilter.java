@@ -3,7 +3,7 @@ package by.it_academy.TravelAgency.filters;
 import javax.servlet.*;
 import java.io.IOException;
 
-public class EncodingFilter implements javax.servlet.Filter {
+public class EncodingFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 

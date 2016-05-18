@@ -27,14 +27,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="tourSelect.jsp">Select tour</a></li>
-                    <li><a href="createTour.jsp">Create tour</a></li>
+                    <li><a href="controller?command=go_to_select_tour">Select tour</a></li>
+                    <li><a href="controller?command=go_to_reserved_tours">Reserved tours</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="login.jsp">Login</a></li>
-                    <li><a href="registry.jsp">Registry</a></li>
-                    <li><a href="loginout.jsp">Sign-out</a></li>
-                    <li><a href="/manager/html/list">Tomcat</a></li>
+                    <li><a href="controller?command=logout">Sign-out</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->

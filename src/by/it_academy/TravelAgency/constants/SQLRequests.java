@@ -13,12 +13,15 @@ public class SQLRequests {
     public static final String GET_ALL_COUNTRIES = "SELECT * FROM countries;";
     public static final String ADD_COUNTRY = String.format("INSERT INTO countries(%s) VALUES (?);", COUNTRIES_COUNTRY);
     public static final String GET_COUNTRY_BY_ID = String.format("SELECT * FROM countries WHERE %s=?;", COUNTRIES_ID);
+    public static final String GET_ID_BY_COUNTRY = String.format("SELECT * FROM users WHERE %s=?;", COUNTRIES_COUNTRY);
 
     public static final String GET_ALL_FOOD_COMPLEXES = "SELECT * FROM food_complexes;";
     public static final String GET_FOOD_COMPLEX_BY_ID = String.format("SELECT * FROM food_complexes WHERE %s=?;", FOOD_COMPLEXES_ID);
+    public static final String GET_ID_BY_FOOD_COMPLEX = String.format("SELECT * FROM users WHERE %s=?;", FOOD_COMPLEXES_FOOD_COMPLEX);
 
     public static final String GET_ALL_HOTEL_TYPES = "SELECT * FROM hotel_types;";
     public static final String GET_HOTEL_TYPE_BY_ID = String.format("SELECT * FROM hotel_types WHERE %s=?;", HOTEL_TYPES_ID);
+    public static final String GET_ID_BY_HOTEL = String.format("SELECT * FROM users WHERE %s=?;", HOTEL_TYPES_HOTEL_TYPE);
 
     public static final String GET_ALL_ROLES = "SELECT * FROM roles;";
     public static final String GET_ROLE_BY_ID = String.format("SELECT * FROM roles WHERE %s=?;", ROLES_ID);
@@ -27,12 +30,15 @@ public class SQLRequests {
     public static final String GET_ALL_TOURS = "SELECT * FROM tours;";
     public static final String ADD_TOUR = String.format("INSERT INTO tours(%s, %s, %s, %s, %s, %s, %s) VALUES (?, ?, ?, ?, ?, ?, ?);", TOURS_FK_COUNTRY, TOURS_FK_TOUR_TYPE, TOURS_FK_TRANSPORT, TOURS_FK_HOTEL_TYPE, TOURS_FK_FOOD_COMPLEX, TOURS_COST, TOURS_DISCOUNT);
     public static final String GET_TOUR_BY_ID = String.format("SELECT * FROM tours WHERE %s='?';", TOURS_ID);
+    public static final String GET_TOURS_BY_REQUEST = String .format("SELECT * FROM tours WHERE %s=? AND %s=? AND %s=? AND %s=? AND %s=?;", TOURS_FK_TOUR_TYPE, TOURS_FK_COUNTRY, TOURS_FK_TRANSPORT, TOURS_FK_HOTEL_TYPE, TOURS_FK_FOOD_COMPLEX);
 
     public static final String GET_ALL_TOUR_TYPES = "SELECT * FROM tour_types;";
     public static final String GET_TOUR_TYPE_BY_ID = String.format("SELECT * FROM tour_types WHERE %s=?;", ACTION_TYPES_ACTION_TYPE);
+    public static final String GET_ID_BY_TOUR_TYPE = String.format("SELECT * FROM users WHERE %s=?;", TOUR_TYPES_TOUR_TYPE);
 
     public static final String GET_ALL_TRANSPORTS = "SELECT * FROM transports;";
     public static final String GET_TRANSPORT_BY_ID = String.format("SELECT * FROM transports WHERE %s=?;", TRANSPORTS_ID);
+    public static final String GET_ID_BY_TRANSPORT = String.format("SELECT * FROM users WHERE %s=?;", TRANSPORTS_TRANSPORT);
 
     public static final String GET_ALL_USERS = "SELECT * FROM users;";
     public static final String ADD_USER = String.format("INSERT INTO users(%s, %s, %s, %s, %s, %s) VALUES (?, ?, ?, ?, ?, ?);", USERS_NAME, USERS_SURNAME, USERS_EMAIL, USERS_LOGIN, USERS_PASSWORD, USERS_FK_ROLE);

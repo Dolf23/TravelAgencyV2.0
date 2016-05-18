@@ -75,4 +75,31 @@ public enum TourDAO implements DAO<Tour> {
         ConnectionPool.INSTANCE.releaseConnection(connection);
         return tour;
     }
+
+    public List<Tour> getListToursByRequest(int tourType, int country, int transport, int hotelType, int foodComplex) throws SQLException {
+        Connection connection = ConnectionPool.INSTANCE.getConnection();
+        PreparedStatement statement = connection.prepareStatement(SQLRequests.GET_TOURS_BY_REQUEST);
+        statement.setInt(1, tourType);
+        statement.setInt(2, country);
+        statement.setInt(3, transport);
+        statement.setInt(4, hotelType);
+        statement.setInt(5, foodComplex);
+        ResultSet resultSet = statement.executeQuery();
+        List<Tour> list = new ArrayList<>();
+
+        while (resultSet.next()){
+            Tour tour = new Tour();
+            tour.setId(resultSet.getInt(TOURS_ID));
+            tour.setFk_country(resultSet.getInt(TOURS_FK_COUNTRY));
+            tour.setFk_tour_type(resultSet.getInt(TOURS_FK_TOUR_TYPE));
+            tour.setFk_transport(resultSet.getInt(TOURS_FK_TRANSPORT));
+            tour.setFk_hotel_type(resultSet.getInt(TOURS_FK_HOTEL_TYPE));
+            tour.setFk_food_complex(resultSet.getInt(TOURS_FK_FOOD_COMPLEX));
+            tour.setCost(resultSet.getInt(TOURS_COST));
+            tour.setDiscount(resultSet.getInt(TOURS_DISCOUNT));
+            list.add(tour);
+        }
+        ConnectionPool.INSTANCE.releaseConnection(connection);
+        return list;
+    }
 }

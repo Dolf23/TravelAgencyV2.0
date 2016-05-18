@@ -12,4 +12,5 @@ public class MessageConstants {
     public static final String INVALID_NUMBER_FORMAT = "message.invalidnumberformat";
     public static final String EMPTY_FIELDS = "message.emptyfields";
     public static final String ERROR_DATABASE = "message.databaseerror";
+    public static final String ERROR_TOURS_LIST = "message.emptytourslist";
 }
