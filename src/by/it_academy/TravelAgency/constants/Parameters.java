@@ -20,6 +20,7 @@ public class Parameters {
     public static final String TRANSPORT = "transport";
     public static final String HOTEL_TYPE = "hotelType";
     public static final String FOOD_COMPLEX = "foodComplex";
+    public static final String COST = "cost";
 
     public static final String ADMIN = "administrator";
     public static final String COMMAND = "command";

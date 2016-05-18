@@ -1,59 +1,77 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="top.jsp" %>
 
-<form class="form-horizontal" action="createtour" method="post">
+<form class="form-horizontal" action="/controller" method="post">
+    <input type="hidden"  name="command" value="create_tour">
     <fieldset>
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="TypeTour">Type tour</label>
+            <label class="col-md-4 control-label" for="tourType">Type tour</label>
             <div class="col-md-4">
-                <input id="TypeTour" name="TypeTour" type="text" placeholder="" class="form-control input-md">
-                <span class="help-block">Enter type tour</span>
+                <select id="tourType" name="tourType" class="form-control">
+                    <c:forEach  var="TourType"  items="${tourTypeList}">
+                        <option value="${TourType.id}">${TourType.tourType}</option>
+                    </c:forEach>
+                </select>
+                <span class="help-block">Select tour type</span>
             </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="Country">Country</label>
+            <label class="col-md-4 control-label" for="country">Country</label>
             <div class="col-md-4">
-                <input id="Country" name="Country" type="text" placeholder="" class="form-control input-md">
+                <input id="country" name="country" type="text" placeholder="" class="form-control input-md">
                 <span class="help-block">Enter country</span>
             </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="Transport">Transport</label>
+            <label class="col-md-4 control-label" for="transport">Transport</label>
             <div class="col-md-4">
-                <input id="Transport" name="Transport" type="text" placeholder="" class="form-control input-md">
-                <span class="help-block">Enter transport</span>
+                <select id="transport" name="transport" class="form-control">
+                    <c:forEach var="Transport" items="${transportList}">
+                        <option value="${Transport.id}">${Transport.transport}</option>
+                    </c:forEach>
+                </select>
+                <span class="help-block">Select transport</span>
             </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="Hotel">Hotel</label>
+            <label class="col-md-4 control-label" for="hotelType">Hotel</label>
             <div class="col-md-4">
-                <input id="Hotel" name="Hotel" type="text" placeholder="" class="form-control input-md">
-                <span class="help-block">Enter hotel</span>
+                <select id="hotelType" name="hotelType" class="form-control">
+                    <c:forEach var="Hotel" items="${hotelList}">
+                        <option value="${Hotel.id}">${Hotel.hotelType}</option>
+                    </c:forEach>
+                </select>
+                <span class="help-block">Select hotel type</span>
             </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="FoodComplex">Food complex</label>
+            <label class="col-md-4 control-label" for="foodComplex">Food complex</label>
             <div class="col-md-4">
-                <input id="FoodComplex" name="FoodComplex" type="text" placeholder="" class="form-control input-md">
-                <span class="help-block">Enter food complex</span>
+                <select id="foodComplex" name="foodComplex" class="form-control">
+                    <c:forEach var="FoodComplex" items="${foodComplexList}">
+                        <option value="${FoodComplex.id}">${FoodComplex.foodComplex}</option>
+                    </c:forEach>
+                </select>
+                <span class="help-block">Select food complex</span>
             </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="Cost">Cost</label>
+            <label class="col-md-4 control-label" for="cost">Cost</label>
             <div class="col-md-4">
-                <input id="Cost" name="Cost" type="text" placeholder="" class="form-control input-md">
+                <input id="cost" name="cost" type="text" placeholder="" class="form-control input-md">
                 <span class="help-block">Enter cost</span>
             </div>
         </div>
@@ -64,6 +82,10 @@
             <div class="col-md-4">
                 <button id="singlebuttonCreateTour" name="singlebuttonCreateTour" class="btn btn-success">Create</button>
             </div>
+        </div>
+
+        <div  align="center">
+            <h3>${operationMessage}<br></h3>
         </div>
 
     </fieldset>

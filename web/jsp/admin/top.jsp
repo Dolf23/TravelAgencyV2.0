@@ -29,7 +29,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="controller?command=show_tours">All tours</a></li>
                     <li><a href="controller?command=go_to_create_tour">Create tour</a></li>
-                    <li><a href="controller?command=go_to_dis">Make discount</a></li>
+                    <li><a href="controller?command=go_to_set_discount">Make discount</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="controller?command=logout">Sign-out</a></li>
