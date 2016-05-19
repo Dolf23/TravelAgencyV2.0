@@ -1,12 +1,5 @@
 package by.it_academy.TravelAgency.dto;
 
-import by.it_academy.TravelAgency.dao.ActionTypeDAO;
-import by.it_academy.TravelAgency.dao.TourDAO;
-import by.it_academy.TravelAgency.dao.UserDAO;
-import by.it_academy.TravelAgency.logger.logger;
-
-import java.sql.SQLException;
-
 public class Action extends Entity {
     private int id;
     private int fk_action;
@@ -26,17 +19,7 @@ public class Action extends Entity {
 
     @Override
     public String toString() {
-        String outString = "";
-        try{
-            outString = "Action [" +
-                    "id=" + id +
-                    ", action=" + ActionTypeDAO.INSTANCE.getEntityByID(fk_action) +
-                    ", user=" + UserDAO.INSTANCE.getEntityByID(fk_user) +
-                    ", tour=" + TourDAO.INSTANCE.getEntityByID(fk_tour) +
-                    ']';
-        } catch (SQLException e) {
-            logger.writeLog(e.toString());
-        }
+        String outString = "Action [" + "id=" + id + ", action=" +  fk_action + ", user=" + fk_user + ", tour=" + fk_tour + ']';
         return outString;
     }
 

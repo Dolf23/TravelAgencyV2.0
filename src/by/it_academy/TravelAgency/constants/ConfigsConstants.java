@@ -14,6 +14,6 @@ public class ConfigsConstants {
     public static final String ADMIN_SET_DISCOUNT_PAGE_PATH = "path.page.admin.discount";
 
     public static final String USER_PAGE_PATH = "path.page.user";
-    public static final String USER_RESERV_PAGE_PATH = "path.page.user.reserve";
+    public static final String USER_RESERVE_PAGE_PATH = "path.page.user.reserve";
     public static final String USER_SELECT_TOUR_PAGE_PATH = "path.page.user.tourselect";
 }

@@ -50,7 +50,7 @@ public class CreateTourCommand extends AbstractCommand {
         } catch (SQLException e) {
             logger.writeLog(e.getMessage());
             page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.ERROR_PAGE_PATH);
-            request.setAttribute(Parameters.ERROR_DATABASE, MessageManager.INSTANCE.getProperty(Parameters.ERROR_DATABASE));
+            request.setAttribute(Parameters.ERROR_DATABASE, MessageManager.INSTANCE.getProperty(MessageConstants.ERROR_DATABASE));
         }
         catch (NumberFormatException e){
             page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.ADMIN_CREATE_TOUR_PAGE_PATH);

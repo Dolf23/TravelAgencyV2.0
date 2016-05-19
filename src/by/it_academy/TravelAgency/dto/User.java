@@ -1,10 +1,5 @@
 package by.it_academy.TravelAgency.dto;
 
-import by.it_academy.TravelAgency.dao.RoleDAO;
-import by.it_academy.TravelAgency.logger.logger;
-
-import java.sql.SQLException;
-
 public class User extends Entity {
     private static final long serialVersionUID = 1L;
 
@@ -90,20 +85,16 @@ public class User extends Entity {
 
     @Override
     public String toString() {
-        String outString = "";
-        try{
-            outString = "User [" +
+        String outString  = "User [" +
                     "id=" + id +
                     ", name='" + name + '\'' +
                     ", surname='" + surname + '\'' +
                     ", email='" + email + '\'' +
                     ", login='" + login + '\'' +
                     ", password='" + password + '\'' +
-                    ", role=" + RoleDAO.INSTANCE.getEntityByID(fk_Role) +
+                    ", role=" + fk_Role +
                     ']';
-        } catch (SQLException e) {
-            logger.writeLog(e.toString());
-        }
+
         return outString;
     }
 

@@ -56,7 +56,7 @@ public class RegistrationCommand extends AbstractCommand {
         } catch (SQLException e) {
             logger.writeLog(e.getMessage());
             page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.ERROR_PAGE_PATH);
-            request.setAttribute(Parameters.ERROR_DATABASE, MessageManager.INSTANCE.getProperty(ERROR_DATABASE));
+            request.setAttribute(Parameters.ERROR_DATABASE, MessageManager.INSTANCE.getProperty(MessageConstants.ERROR_DATABASE));
         }
         catch (NumberFormatException e){
             logger.writeLog(e.getMessage());

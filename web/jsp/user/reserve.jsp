@@ -2,21 +2,19 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="top.jsp" %>
 
-<form class="form-horizontal" action="reserve" method="post">
+<form class="form-horizontal" action="/controller" method="post">
     <input type="hidden"  name="command" value="reserve">
     <fieldset>
 
         <!-- Select Multiple -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="selectmultipleTours">Tours</label>
+            <label class="col-md-4 control-label" for="reservingTour">Tours</label>
             <div class="col-md-4">
-                <select id="selectmultipleTours" name="selectmultipleTours" class="form-control" multiple="multiple">
-                    <option value="1">Option one</option>
-                    <option value="2">Option two</option>
+                <select id="reservingTour" name="reservingTour" class="form-control" multiple="multiple" style="width: auto;">
+                    <c:forEach  var="Tour" items="${tourList}">
+                        <option value="${Tour.id}">${Tour}</option>
+                    </c:forEach>
                 </select>
-                <c:forEach  var="Tour" items="${tourList}">
-                    <option value="${Tour.id}">${Tour}</option>
-                </c:forEach>
             </div>
         </div>
 

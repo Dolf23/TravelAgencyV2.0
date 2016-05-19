@@ -9,6 +9,7 @@ public class SQLRequests {
 
     public static final String GET_ALL_ACTION_TYPES = "SELECT * FROM action_types;";
     public static final String GET_ACTION_TYPE_BY_ID = String.format("SELECT * FROM action_types WHERE %s=?;", TOUR_TYPES_ID);
+    public static final String GET_ID_BY_ACTION_TYPE = String.format("SELECT * FROM action_types WHERE %s=?;", ACTION_TYPES_ACTION_TYPE);
 
     public static final String GET_ALL_COUNTRIES = "SELECT * FROM countries;";
     public static final String ADD_COUNTRY = String.format("INSERT INTO countries(%s) VALUES (?);", COUNTRIES_COUNTRY);
@@ -29,7 +30,7 @@ public class SQLRequests {
 
     public static final String GET_ALL_TOURS = "SELECT * FROM tours;";
     public static final String ADD_TOUR = String.format("INSERT INTO tours(%s, %s, %s, %s, %s, %s, %s) VALUES (?, ?, ?, ?, ?, ?, ?);", TOURS_FK_COUNTRY, TOURS_FK_TOUR_TYPE, TOURS_FK_TRANSPORT, TOURS_FK_HOTEL_TYPE, TOURS_FK_FOOD_COMPLEX, TOURS_COST, TOURS_DISCOUNT);
-    public static final String GET_TOUR_BY_ID = String.format("SELECT * FROM tours WHERE %s='?';", TOURS_ID);
+    public static final String GET_TOUR_BY_ID = String.format("SELECT * FROM tours WHERE %s=?;", TOURS_ID);
     public static final String GET_TOURS_BY_REQUEST = String .format("SELECT * FROM tours WHERE %s=? AND %s=? AND %s=? AND %s=? AND %s=?;", TOURS_FK_TOUR_TYPE, TOURS_FK_COUNTRY, TOURS_FK_TRANSPORT, TOURS_FK_HOTEL_TYPE, TOURS_FK_FOOD_COMPLEX);
 
     public static final String GET_ALL_TOUR_TYPES = "SELECT * FROM tour_types;";

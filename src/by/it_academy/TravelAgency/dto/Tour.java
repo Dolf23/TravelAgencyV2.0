@@ -1,10 +1,5 @@
 package by.it_academy.TravelAgency.dto;
 
-import by.it_academy.TravelAgency.dao.*;
-import by.it_academy.TravelAgency.logger.logger;
-
-import java.sql.SQLException;
-
 public class Tour extends Entity {
     private int id;
     private int fk_country;
@@ -32,21 +27,17 @@ public class Tour extends Entity {
 
     @Override
     public String toString() {
-        String outString = "";
-        try {
-            outString = "Tour [" +
+        String outString ="Tour [" +
                     "id=" + id +
-                    ", country=" + CountryDAO.INSTANCE.getEntityByID(fk_country) +
-                    ", tour type=" + TourTypeDAO.INSTANCE.getEntityByID(fk_tour_type) +
-                    ", transport=" + TransportDAO.INSTANCE.getEntityByID(fk_transport) +
-                    ", hotel type=" + HotelTypeDAO.INSTANCE.getEntityByID(fk_hotel_type) +
-                    ", food complex=" + FoodComplexDAO.INSTANCE.getEntityByID(fk_food_complex) +
+                    ", country=" + fk_country +
+                    ", tour type=" + fk_tour_type +
+                    ", transport=" + fk_transport +
+                    ", hotel type=" + fk_hotel_type +
+                    ", food complex=" + fk_food_complex +
                     ", cost=" + cost +
                     ", discount=" + discount +
                     ']';
-        } catch (SQLException e) {
-            logger.writeLog(e.toString());
-        }
+
         return outString;
     }
 

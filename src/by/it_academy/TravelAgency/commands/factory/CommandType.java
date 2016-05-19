@@ -5,6 +5,7 @@ import by.it_academy.TravelAgency.commands.admin.CreateTourCommand;
 import by.it_academy.TravelAgency.commands.admin.GoToCreateTourCommand;
 import by.it_academy.TravelAgency.commands.guest.*;
 import by.it_academy.TravelAgency.commands.user.GoToSelectTourCommand;
+import by.it_academy.TravelAgency.commands.user.ReserveCommand;
 import by.it_academy.TravelAgency.commands.user.SelectTourCommand;
 
 public enum CommandType {
@@ -45,6 +46,10 @@ public enum CommandType {
 
             case CREATE_TOUR:
                 return new CreateTourCommand();
+
+            case RESERVE:
+                return new ReserveCommand();
+
             default:
                 throw new EnumConstantNotPresentException(this.getDeclaringClass(), this.name());
         }

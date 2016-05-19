@@ -36,7 +36,7 @@ public class SelectTourCommand extends AbstractCommand {
             List<Tour> list = TourDAO.INSTANCE.getListToursByRequest(fk_tourType, fk_country, fk_transport, fk_hotelType, fk_foodComplex);
             if (!list.isEmpty()){
                 request.setAttribute(TOURS_LIST, list);
-                page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.USER_RESERV_PAGE_PATH);
+                page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.USER_RESERVE_PAGE_PATH);
 
             }
             else {
@@ -47,7 +47,7 @@ public class SelectTourCommand extends AbstractCommand {
         catch (SQLException e) {
             logger.writeLog(e.getMessage());
             page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.ERROR_PAGE_PATH);
-            request.setAttribute(Parameters.ERROR_DATABASE, MessageManager.INSTANCE.getProperty(ERROR_DATABASE));
+            request.setAttribute(Parameters.ERROR_DATABASE, MessageManager.INSTANCE.getProperty(MessageConstants.ERROR_DATABASE));
         }
         return page;
     }
