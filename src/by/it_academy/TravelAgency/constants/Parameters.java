@@ -13,8 +13,9 @@ public class Parameters {
     public static final String TRANSPORT_LIST = "transportList";
     public static final String HOTEL_TYPE_LIST = "hotelList";
     public static final String FOOD_COMPLEX_LIST = "foodComplexList";
-    public static final String TOURS_LIST = "tourList";
     public static final String RESERVING_TOUR = "reservingTour";
+    public static final String TOURS_MAP = "toursMap";
+
 
     public static final String TOUR_TYPE = "tourType";
     public static final String COUNTRY = "country";

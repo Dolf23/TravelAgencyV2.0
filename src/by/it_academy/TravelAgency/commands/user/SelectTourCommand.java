@@ -5,14 +5,13 @@ import by.it_academy.TravelAgency.constants.ConfigsConstants;
 import by.it_academy.TravelAgency.constants.MessageConstants;
 import by.it_academy.TravelAgency.constants.Parameters;
 import by.it_academy.TravelAgency.dao.TourDAO;
-import by.it_academy.TravelAgency.dto.Tour;
 import by.it_academy.TravelAgency.logger.logger;
 import by.it_academy.TravelAgency.managers.ConfigurationManager;
 import by.it_academy.TravelAgency.managers.MessageManager;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.Map;
 
 import static by.it_academy.TravelAgency.constants.Parameters.*;
 
@@ -33,9 +32,9 @@ public class SelectTourCommand extends AbstractCommand {
         fk_foodComplex = Integer.parseInt(request.getParameter(FOOD_COMPLEX));
 
         try {
-            List<Tour> list = TourDAO.INSTANCE.getListToursByRequest(fk_tourType, fk_country, fk_transport, fk_hotelType, fk_foodComplex);
-            if (!list.isEmpty()){
-                request.setAttribute(TOURS_LIST, list);
+            Map<Integer, String> map = TourDAO.INSTANCE.getMapToursByRequest(fk_tourType, fk_country, fk_transport, fk_hotelType, fk_foodComplex);
+            if (!map.isEmpty()){
+                request.setAttribute(TOURS_MAP, map);
                 page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.USER_RESERVE_PAGE_PATH);
 
             }
