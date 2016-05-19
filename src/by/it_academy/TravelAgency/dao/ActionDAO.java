@@ -88,7 +88,7 @@ public enum ActionDAO implements DAO<Action> {
         PreparedStatement statement = connection.prepareStatement(SQLRequests.DELETE_ACTION_BY_USER_AND_TOUR);
         statement.setInt(1, user.getId());
         statement.setInt(2, idAction);
-        statement.executeQuery();
+        statement.executeUpdate();
         ConnectionPool.INSTANCE.releaseConnection(connection);
     }
 }
