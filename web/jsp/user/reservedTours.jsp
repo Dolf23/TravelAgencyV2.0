@@ -10,7 +10,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="reservingTour">Tours</label>
       <div class="col-md-4">
-        <select id="reservingTour" name="reservingTour" class="form-control" multiple="multiple" style="width: auto;">
+        <select id="reservingTour" name="reservingTour" class="form-control" multiple="multiple" style="width: 450px; height: 450px;">
           <c:forEach  var="Tour" items="${toursMap}">
             <option value="${Tour.key}">${Tour.value}</option>
           </c:forEach>

@@ -23,18 +23,27 @@ public class ReserveCommand extends AbstractCommand {
     public String execute(HttpServletRequest request) {
         String page;
         try {
-            int idTour = Integer.parseInt(request.getParameter(Parameters.RESERVING_TOUR));
-            Tour tour = TourDAO.INSTANCE.getEntityByID(idTour);
+            String idTourString = request.getParameter(Parameters.RESERVING_TOUR);
 
-            HttpSession session = request.getSession();
-            User user = (User) session.getAttribute(Parameters.USER);
+            if (null != idTourString){
+                int idTour = Integer.parseInt(idTourString);
+                Tour tour = TourDAO.INSTANCE.getEntityByID(idTour);
 
-            String actionType = request.getParameter(Parameters.COMMAND);
+                HttpSession session = request.getSession();
+                User user = (User) session.getAttribute(Parameters.USER);
 
-            reserveTour(tour, user, actionType);
+                String actionType = request.getParameter(Parameters.COMMAND);
 
-            page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.USER_PAGE_PATH);
-            request.setAttribute(Parameters.OPERATION_MESSAGE, MessageManager.INSTANCE.getProperty(MessageConstants.RESERVE_TOUR));
+                reserveTour(tour, user, actionType);
+
+                page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.USER_PAGE_PATH);
+                request.setAttribute(Parameters.OPERATION_MESSAGE, MessageManager.INSTANCE.getProperty(MessageConstants.RESERVE_TOUR));
+            }
+            else
+            {
+                page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.USER_PAGE_PATH);
+                request.setAttribute(Parameters.OPERATION_MESSAGE, MessageManager.INSTANCE.getProperty(MessageConstants.EMPTY_CHOICE));
+            }
 
         } catch (SQLException e) {
             logger.writeLog(e.getMessage());

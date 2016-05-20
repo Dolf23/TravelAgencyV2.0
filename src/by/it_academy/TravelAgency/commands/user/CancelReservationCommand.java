@@ -19,14 +19,22 @@ public class CancelReservationCommand extends AbstractCommand {
     public String execute(HttpServletRequest request) {
         String page;
         try {
-            HttpSession session = request.getSession();
-            User user = (User) session.getAttribute(Parameters.USER);
+            String idTourString = request.getParameter(Parameters.RESERVING_TOUR);
 
-            int idTour = Integer.parseInt(request.getParameter(Parameters.RESERVING_TOUR));
-            ActionDAO.INSTANCE.deleteAction(user, idTour);
+            if (null != idTourString){
+                HttpSession session = request.getSession();
+                User user = (User) session.getAttribute(Parameters.USER);
 
-            page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.USER_PAGE_PATH);
-            request.setAttribute(Parameters.OPERATION_MESSAGE, MessageManager.INSTANCE.getProperty(MessageConstants.CANCEL_RESERVING));
+                int idTour = Integer.parseInt(idTourString);
+                ActionDAO.INSTANCE.deleteAction(user, idTour);
+
+                page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.USER_PAGE_PATH);
+                request.setAttribute(Parameters.OPERATION_MESSAGE, MessageManager.INSTANCE.getProperty(MessageConstants.CANCEL_RESERVING));
+            }
+            else{
+                page = ConfigurationManager.INSTANCE.getProperty(ConfigsConstants.USER_PAGE_PATH);
+                request.setAttribute(Parameters.OPERATION_MESSAGE, MessageManager.INSTANCE.getProperty(MessageConstants.EMPTY_CHOICE));
+            }
         }
         catch (SQLException e){
             logger.writeLog(e.getMessage());
