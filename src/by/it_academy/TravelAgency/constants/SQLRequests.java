@@ -34,6 +34,7 @@ public class SQLRequests {
     public static final String ADD_TOUR = String.format("INSERT INTO tours(%s, %s, %s, %s, %s, %s, %s) VALUES (?, ?, ?, ?, ?, ?, ?);", TOURS_FK_COUNTRY, TOURS_FK_TOUR_TYPE, TOURS_FK_TRANSPORT, TOURS_FK_HOTEL_TYPE, TOURS_FK_FOOD_COMPLEX, TOURS_COST, TOURS_DISCOUNT);
     public static final String GET_TOUR_BY_ID = String.format("SELECT * FROM tours WHERE %s=?;", TOURS_ID);
     public static final String GET_TOURS_BY_REQUEST = String .format("SELECT * FROM tours WHERE %s=? AND %s=? AND %s=? AND %s=? AND %s=?;", TOURS_FK_TOUR_TYPE, TOURS_FK_COUNTRY, TOURS_FK_TRANSPORT, TOURS_FK_HOTEL_TYPE, TOURS_FK_FOOD_COMPLEX);
+    public static final String UPDATE_TOUR_SET_DISCOUNT = String.format("UPDATE tours SET %s=? WHERE %s=?;", TOURS_DISCOUNT, TOURS_ID);
 
     public static final String GET_ALL_TOUR_TYPES = "SELECT * FROM tour_types;";
     public static final String GET_TOUR_TYPE_BY_ID = String.format("SELECT * FROM tour_types WHERE %s=?;", ACTION_TYPES_ID);

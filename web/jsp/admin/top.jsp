@@ -23,13 +23,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/TravelAgency">Main</a>
+                <a class="navbar-brand" href="controller?command=go_to_main_admin">Main</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="controller?command=show_tours">All tours</a></li>
                     <li><a href="controller?command=go_to_create_tour">Create tour</a></li>
-                    <li><a href="controller?command=go_to_set_discount">Make discount</a></li>
+                    <li><a href="controller?command=go_to_set_discount">Set discount</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="controller?command=logout">Sign-out</a></li>

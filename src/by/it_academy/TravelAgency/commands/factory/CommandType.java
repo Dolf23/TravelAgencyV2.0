@@ -1,8 +1,7 @@
 package by.it_academy.TravelAgency.commands.factory;
 
 import by.it_academy.TravelAgency.commands.Command;
-import by.it_academy.TravelAgency.commands.admin.CreateTourCommand;
-import by.it_academy.TravelAgency.commands.admin.GoToCreateTourCommand;
+import by.it_academy.TravelAgency.commands.admin.*;
 import by.it_academy.TravelAgency.commands.guest.*;
 import by.it_academy.TravelAgency.commands.user.*;
 
@@ -11,10 +10,10 @@ public enum CommandType {
     LOGIN, LOGOUT, REGISTRATION, BACK, GO_TO_REGISTRATION,
 
     //user command
-    GO_TO_SELECT_TOUR, SELECT_TOUR, RESERVE, GO_TO_RESERVED_TOURS, CANCEL_RESERVATION,
+    GO_TO_MAIN_USER, GO_TO_SELECT_TOUR, SELECT_TOUR, RESERVE, GO_TO_RESERVED_TOURS, CANCEL_RESERVATION,
 
     //admin command
-    SHOW_TOURS, GO_TO_CREATE_TOUR, CREATE_TOUR, GO_TO_SET_DISCOUNT, SETDISCOUNT;
+    GO_TO_MAIN_ADMIN, GO_TO_CREATE_TOUR, CREATE_TOUR, GO_TO_SET_DISCOUNT, SET_DISCOUNT;
 
     public Command getCurrentCommand(){
         switch (this){
@@ -32,6 +31,12 @@ public enum CommandType {
 
             case GO_TO_REGISTRATION:
                 return new GoToRegistrationCommand();
+
+            case GO_TO_MAIN_ADMIN:
+                return new GoToMainAdminCommand();
+
+            case GO_TO_MAIN_USER:
+                return new GoToMainUserCommand();
 
             case GO_TO_SELECT_TOUR:
                 return new GoToSelectTourCommand();
@@ -53,6 +58,12 @@ public enum CommandType {
 
             case CANCEL_RESERVATION:
                 return new CancelReservationCommand();
+
+            case GO_TO_SET_DISCOUNT:
+                return new GoToSetDiscountCommand();
+
+            case SET_DISCOUNT:
+                return new SetDiscountCommand();
 
             default:
                 throw new EnumConstantNotPresentException(this.getDeclaringClass(), this.name());

@@ -78,6 +78,15 @@ public enum TourDAO implements DAO<Tour> {
         return tour;
     }
 
+    public void setDiscountById(Tour tour) throws SQLException{
+        Connection connection = ConnectionPool.INSTANCE.getConnection();
+        PreparedStatement statement = connection.prepareStatement(SQLRequests.UPDATE_TOUR_SET_DISCOUNT);
+        statement.setInt(1, tour.getDiscount());
+        statement.setInt(2, tour.getId());
+        statement.executeUpdate();
+        ConnectionPool.INSTANCE.releaseConnection(connection);
+    }
+
     public Map<Integer, String> getMapToursByRequest(int tourType, int country, int transport, int hotelType, int foodComplex) throws SQLException {
         Connection connection = ConnectionPool.INSTANCE.getConnection();
         PreparedStatement statement = connection.prepareStatement(SQLRequests.GET_TOURS_BY_REQUEST);
@@ -107,5 +116,16 @@ public enum TourDAO implements DAO<Tour> {
                 FoodComplexDAO.INSTANCE.getEntityByID(tour.getFk_food_complex()).getFoodComplex() + " " +
                 tour.getCost() +  " " + tour.getDiscount();
         return tourString;
+    }
+
+    public Map<Integer, String> getAllToursMap() throws SQLException {
+        List<Tour> list = getAll();
+        Map<Integer, String> map = new HashMap<>();
+
+        for (Tour tour: list){
+            int idTour = tour.getId();
+            map.put(idTour, convertTourToString(idTour));
+        }
+        return map;
     }
 }

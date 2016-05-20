@@ -15,6 +15,8 @@ public class Parameters {
     public static final String FOOD_COMPLEX_LIST = "foodComplexList";
     public static final String RESERVING_TOUR = "reservingTour";
     public static final String TOURS_MAP = "toursMap";
+    public static final String DISCOUNTING_TOUR = "discountingTour";
+    public static final String AMOUNT_DISCOUNT = "amountDiscount";
 
 
     public static final String TOUR_TYPE = "tourType";

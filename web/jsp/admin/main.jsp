@@ -5,6 +5,9 @@
     <p><a href="../registry.jsp">Register!</a></p>
     <p><a href="login.jsp">Login!</a></p>
     <p><a href=# onclick="history.back(); return false;">Back</a> </p>
+    <div  align="center">
+        <h3>${operationMessage}<br></h3>
+    </div>
 </div>
 
 <%@ include file="bottom.jsp" %>

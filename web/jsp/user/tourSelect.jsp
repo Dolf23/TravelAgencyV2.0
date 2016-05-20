@@ -78,6 +78,10 @@
             <h3>${errorListIsEmpty}<br></h3>
         </div>
 
+        <div  align="center">
+            <h3>${operationMessage}<br></h3>
+        </div>
+
     </fieldset>
 </form>
 
